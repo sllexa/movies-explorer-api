@@ -1,12 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./routes');
+const { PORT, MONGO_DB } = require('./utils/config');
 
 const app = express();
 
-const { PORT = 3000, MONGO_DB = 'mongodb://127.0.0.1:27017/bitfilmsdb'} = process.env
-
 app.use(express.json());
-
+app.use(routes);
 async function start() {
   try {
     await mongoose.connect(MONGO_DB, { useNewUrlParser: true });

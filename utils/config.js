@@ -7,7 +7,7 @@ module.exports.MONGO_DB = NODE_ENV === 'production' ? MONGO_URL : 'mongodb://127
 module.exports.SECRET_KEY = NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret';
 
 module.exports.CORS_OPTIONS = {
-  origin: ['http://localhost:3000'],
+  origin: ['http://localhost:3000', 'http://sllexa.nomoredomainsicu.ru', 'https://sllexa.nomoredomainsicu.ru'],
   credentials: true,
   exposedHeaders: ['set-cookie'],
 };

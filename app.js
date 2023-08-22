@@ -4,16 +4,23 @@ const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
+const cors = require('cors');
 const routes = require('./routes');
 const handelError = require('./middlewares/handelError');
-const { PORT, MONGO_DB } = require('./utils/config');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+const limiter = require('./middlewares/limiter');
+const { PORT, MONGO_DB, CORS_OPTIONS } = require('./utils/config');
 
 const app = express();
 
 app.use(helmet());
 app.use(cookieParser());
 app.use(express.json());
+app.use(requestLogger);
+app.use(limiter);
+app.use(cors(CORS_OPTIONS));
 app.use(routes);
+app.use(errorLogger);
 app.use(errors());
 app.use(handelError);
 

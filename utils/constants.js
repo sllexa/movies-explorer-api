@@ -1,0 +1,27 @@
+module.exports.CREATE_CODE_SUCCESS = 201;
+module.exports.ERROR_CODE_UNAUTHORIZED = 401;
+module.exports.ERROR_CODE_FORBIDDEN = 403;
+module.exports.ERROR_CODE_BAD_REQUEST = 400;
+module.exports.ERROR_CODE_NOT_FOUND = 404;
+module.exports.ERROR_CODE_CONFLICT = 409;
+module.exports.ERROR_CODE_INTERNAL_SERVER_ERROR = 500;
+module.exports.LINK_REGEX = /^https?:\/\/(www\.)?[a-zA-Z\d-]+\.[\w\d\-.~:/?#[\]@!$&'()*+,;=]{2,}#?$/i;
+
+module.exports.ACCESS_ERROR = 'Попытка удалить чужой фильм.';
+module.exports.MOVIE_ALREADY_EXISTS = 'Фильм с таким id уже существует.';
+module.exports.MOVIE_NOT_FOUND = 'Фильм с указанным _id не найден.';
+module.exports.WRONG_DATA_MOVIE_DELETE = 'Переданы некорректные данные при удалении фильма.';
+module.exports.REMOVE_MOVIE_SUCCESS = 'Фильм успешно удалён.';
+module.exports.WRONG_DATA_MOVIE = 'Переданы некорректные данные при создании фильма.';
+module.exports.EMAIL_ALREADY_EXISTS = 'Пользователь с таким email уже существует.';
+module.exports.WRONG_DATA_USER = 'При регистрации пользователя произошла ошибка.';
+module.exports.WRONG_DATA_PROFILE = 'При обновлении профиля произошла ошибка.';
+module.exports.USER_NOT_FOUND = 'Пользователь по указанному _id не найден.';
+module.exports.AUTHORIZATION_REQUIRED = 'При авторизации произошла ошибка. Токен не передан или передан не в том формате.';
+module.exports.AUTHORIZATION_SUCCESS = 'Авторизация прошла успешно.';
+module.exports.LOG_OUT_MESSAGE = 'Пока-пока!';
+module.exports.SERVER_ERROR = 'На сервере произошла ошибка.';
+module.exports.WRONG_EMAIL_OR_PASSWORD = 'Неправильный логин или пароль.';
+module.exports.WRONG_EMAIL = 'Некорректный email.';
+module.exports.WRONG_URL_FORMAT = 'Некорректный адрес URL.';
+module.exports.URL_NOT_FOUND = 'Запрашиваемый ресурс не найден, проверьте адрес:';

@@ -5,7 +5,7 @@ const NotFoundError = require('../utils/errors/NotFoundError');
 const ForbiddenError = require('../utils/errors/ForbiddenError');
 const {
   CREATE_CODE_SUCCESS, WRONG_DATA_MOVIE, MOVIE_NOT_FOUND, ACCESS_ERROR,
-  WRONG_DATA_MOVIE_DELETE, REMOVE_MOVIE_SUCCESS, MOVIE_ALREADY_EXISTS,
+  WRONG_DATA_MOVIE_DELETE, REMOVE_MOVIE_SUCCESS,
 } = require('../utils/constants');
 
 module.exports.getMovies = async (req, res, next) => {
@@ -19,10 +19,6 @@ module.exports.getMovies = async (req, res, next) => {
 
 module.exports.createMovie = async (req, res, next) => {
   try {
-    const movie = await Movie.findOne({ movieId: req.body.movieId, owner: req.user._id });
-    if (movie) {
-      throw new ForbiddenError(MOVIE_ALREADY_EXISTS);
-    }
     const newMovie = await Movie.create({ ...req.body, owner: req.user._id });
     res.status(CREATE_CODE_SUCCESS).send(newMovie);
   } catch (err) {
